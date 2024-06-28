@@ -57,4 +57,21 @@ class BinarySearchTree {
 
         return found ? current : false;
     }
+
+    contains(value) {
+        if (!this.root) return false;
+        let current = this.root,
+        found = false;
+
+        while (!found && current) {
+            if (current.value > value) {
+                current = current.left;
+            } else if (current.value < value) {
+                current = current.right;
+            } else {
+                found = true;
+            }
+        }
+        return found;
+    }
 }
